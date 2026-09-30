@@ -1,0 +1,29 @@
+name: Documentation
+description: Report or propose a documentation improvement
+title: "[Docs]: "
+labels: ["documentation"]
+body:
+  - type: input
+    id: document
+    attributes:
+      label: Dokument / Document
+      placeholder: README.md or docs/...
+    validations:
+      required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: Was sollte verbessert werden? / What should be improved?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Vorschlag / Proposed improvement
+  - type: checkboxes
+    id: security
+    attributes:
+      label: Publication Security Gate
+      options:
+        - label: No sensitive or private infrastructure information is included.
+          required: true

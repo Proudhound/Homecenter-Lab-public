@@ -39,12 +39,17 @@ Ziel ist, den Aufbau eines alltagstauglichen, local-first Home-Labs nachvollzieh
     ├── architecture/
     ├── product/
     ├── hardware/
+    ├── Historie/
     ├── networking/
     ├── automation/
     ├── energy/
     ├── security/
     └── ai-voice/
 ```
+
+### Historie / Build Log
+
+Unter [docs/Historie/](docs/Historie/) werden reale Inbetriebnahmen, Umbauten und Fehleranalysen in **sanitisierter Form** dokumentiert. Die Einträge zeigen bewusst auch Probleme und Diagnosewege, nicht nur das Endergebnis.
 
 ### Was bewusst nicht veröffentlicht wird
 

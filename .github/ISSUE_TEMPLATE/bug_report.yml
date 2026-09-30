@@ -1,0 +1,45 @@
+name: Bug report
+description: Report a reproducible problem in HomeCenter Lab Public
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke / Thank you for helping improve HomeCenter Lab Public.
+        **Do not include secrets, real private IP/MAC addresses, serial numbers or personal data.**
+  - type: input
+    id: affected
+    attributes:
+      label: Betroffene Datei / Affected file or component
+      placeholder: docs/... or component name
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Was ist passiert? / What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Erwartetes Verhalten / Expected behavior
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Relevante Version(en) / Relevant version(s)
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduktion / Reproduction steps
+  - type: checkboxes
+    id: security
+    attributes:
+      label: Publication Security Gate
+      options:
+        - label: I checked this issue for credentials, secrets, private IP/MAC addresses, serial numbers, private hostnames and personal data.
+          required: true

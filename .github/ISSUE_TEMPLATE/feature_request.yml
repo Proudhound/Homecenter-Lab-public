@@ -1,0 +1,53 @@
+name: Feature or integration proposal
+description: Propose a feature, integration, architecture change or automation
+title: "[Proposal]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / use case
+      description: Welches reale Problem soll gelöst werden? / What real problem should this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: benefit
+    attributes:
+      label: Nutzen / Benefit
+      description: Who benefits and how?
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Vorgeschlagene Lösung / Proposed solution
+  - type: dropdown
+    id: area
+    attributes:
+      label: Project area
+      options:
+        - Family
+        - Automate
+        - Ops
+        - Intelligence / AI / Voice
+        - Energy
+        - Networking
+        - Security
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativen / Alternatives considered
+  - type: checkboxes
+    id: principles
+    attributes:
+      label: Project principles
+      options:
+        - label: I considered Family First and whether existing hardware/software can solve the problem.
+          required: true
+        - label: Critical functionality remains deterministic and manually operable where applicable.
+          required: true
+        - label: No sensitive or private infrastructure information is included.
+          required: true

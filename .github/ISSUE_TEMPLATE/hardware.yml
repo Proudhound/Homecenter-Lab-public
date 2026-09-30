@@ -1,0 +1,43 @@
+name: Hardware experience or proposal
+description: Share reproducible hardware experience or propose hardware for a defined use case
+title: "[Hardware]: "
+labels: ["hardware"]
+body:
+  - type: input
+    id: hardware
+    attributes:
+      label: Hardware
+      placeholder: Manufacturer and model (no serial number)
+    validations:
+      required: true
+  - type: textarea
+    id: usecase
+    attributes:
+      label: Use case
+      description: Welchen konkreten HomeCenter-Anwendungsfall betrifft die Hardware?
+    validations:
+      required: true
+  - type: textarea
+    id: experience
+    attributes:
+      label: Erfahrung / Evidence
+      description: Compatibility, measurements, limitations or reproducible observations.
+  - type: textarea
+    id: value
+    attributes:
+      label: Why does it add value?
+      description: Consider existing hardware, power use, cost and complexity.
+  - type: checkboxes
+    id: disclosure
+    attributes:
+      label: Disclosure & security
+      options:
+        - label: I disclosed below if the hardware was sponsored, loaned, discounted or supplied by a vendor.
+          required: true
+        - label: I removed serial numbers, MAC addresses, private network details and personal data.
+          required: true
+  - type: textarea
+    id: relationship
+    attributes:
+      label: Commercial relationship / Kommerzielle Beziehung
+      placeholder: None / self-purchased / sponsored / loaned / discounted / other

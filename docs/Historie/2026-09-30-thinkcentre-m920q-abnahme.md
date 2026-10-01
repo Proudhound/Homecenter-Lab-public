@@ -207,3 +207,17 @@ Ergebnis:
 - nur leichte Staub-/Gebrauchsspuren
 
 Damit ist die notwendige Hardware für den geplanten 2,5-Zoll-SATA-Einbau vorhanden. RAM und NVMe befinden sich auf der Unterseite des Tiny und waren für diesen Arbeitsschritt nicht zu öffnen; beide waren bereits zuvor softwareseitig verifiziert worden.
+
+
+## Fortsetzung — Bauhöhe des wiederverwendeten SATA-Laufwerks
+
+Das für den Einbau vorgesehene 2,5-Zoll-Laufwerk ist eine 9,5-mm-HDD.
+
+Der originale Tiny-Caddy ist für die flachere Standardbestückung ausgelegt; ein 9,5-mm-Laufwerk sollte daher **nicht mit Kraft in den Serien-Caddy eingesetzt werden**.
+
+Für den weiteren Aufbau werden zwei saubere Wege betrachtet:
+
+1. passender Ersatz-/3D-Druck-Caddy mit sicherer mechanischer Fixierung und ausreichendem Luft-/Kabelabstand,
+2. Nutzung des Laufwerks außerhalb des internen Tiny-Bays.
+
+Provisorisches Einkleben oder ungesichertes Ablegen im Gehäuse ist für einen dauerhaften 24/7-Server nicht vorgesehen.

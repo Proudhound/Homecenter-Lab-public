@@ -190,3 +190,20 @@ Für die eigentliche Proxmox-Installation wird die zweite HDD anschließend opti
 ## Fazit des Tages
 
 Die Erstabnahme wurde bewusst **vor** dem Umbau durchgeführt. Das hat bereits zwei Diagnosefallen sichtbar gemacht — den irreführenden Windows-Produktnamen und die widersprüchlich wirkenden Virtualisierungs-WMI-Werte — ohne dass dabei die originale Installation oder der Lieferzustand verloren ging.
+
+
+## Fortsetzung — Innenraum-Sichtprüfung
+
+Vor dem Einbau des sekundären Datenträgers wurde der Tiny-PC stromlos geöffnet und die Oberseite fotografisch geprüft.
+
+Ergebnis:
+
+- 2,5-Zoll-Laufwerksbracket vorhanden und leer
+- SATA-Flachbandkabel vorhanden und am vorgesehenen Mainboard-SATA-Anschluss angeschlossen
+- Laufwerksanschluss im Bracket-Bereich vorhanden
+- WLAN-Modul und Antennenverkabelung vorhanden
+- Lüfter/Kühlmodul vollständig
+- keine offensichtlichen Brandstellen, Korrosion, gebrochenen Stecker oder losen Kabel sichtbar
+- nur leichte Staub-/Gebrauchsspuren
+
+Damit ist die notwendige Hardware für den geplanten 2,5-Zoll-SATA-Einbau vorhanden. RAM und NVMe befinden sich auf der Unterseite des Tiny und waren für diesen Arbeitsschritt nicht zu öffnen; beide waren bereits zuvor softwareseitig verifiziert worden.

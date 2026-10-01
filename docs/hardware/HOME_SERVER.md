@@ -123,8 +123,8 @@ For the final Proxmox installation, the secondary HDD can be temporarily disconn
 - [x] Intel virtualization enabled
 - [x] VT-d enabled
 - [x] memory diagnostic completed without errors
-- [ ] internal SATA bay/cable inspection
-- [ ] secondary HDD installation and joint detection test
+- [x] internal SATA bay/cable inspection
+- [ ] suitable 7-mm SATA drive selection and joint detection test
 - [ ] onboard Gigabit Ethernet link test
 - [ ] USB/display tests relevant to the deployment
 - [ ] thermal/fan stability test
@@ -134,3 +134,34 @@ For the final Proxmox installation, the secondary HDD can be temporarily disconn
 - [ ] post-install storage/network/backup baseline
 
 The chronological acceptance log is documented under [docs/Historie/2026-09-30-thinkcentre-m920q-abnahme.md](../Historie/2026-09-30-thinkcentre-m920q-abnahme.md).
+
+
+## Physical inspection and storage expansion
+
+The top and bottom covers were removed before any storage modification.
+
+Verified:
+
+- original 2.5-inch bracket and SATA ribbon cable are present
+- two SO-DIMM slots are present, one occupied and one free
+- the 256-GB NVMe is physically present and seated correctly
+- no obvious corrosion, burn marks or broken connectors were visible in the inspected areas
+
+The available reused 2.5-inch HDD is 9.5 mm high. It does not fit the intended stock-bracket layout cleanly. Running it loose on top of motherboard components was rejected even though it would fit under the outer cover.
+
+The stock 2.5-inch bay also competes with the PCIe expansion area. The short-term plan is therefore to use a **7-mm SATA drive** in the original bracket if a suitable tested drive is available.
+
+The longer-term architecture keeps the Tiny focused on compute and treats bulk storage separately:
+
+```text
+Tiny host
+├── NVMe -> hypervisor and active workloads
+├── optional 7-mm SATA -> temporary/local secondary storage
+└── PCIe -> future NIC or HBA
+
+Separate / expanded storage
+├── 3.5-inch HDDs -> preferred bulk storage
+└── optional 2.5-inch bays -> SSDs / reused drives
+```
+
+For multi-disk growth, a proper HBA/SATA/SAS path or a separate storage node is preferred over a collection of independent USB-to-SATA adapters.

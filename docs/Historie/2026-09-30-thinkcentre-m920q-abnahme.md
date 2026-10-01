@@ -221,3 +221,41 @@ Für den weiteren Aufbau werden zwei saubere Wege betrachtet:
 2. Nutzung des Laufwerks außerhalb des internen Tiny-Bays.
 
 Provisorisches Einkleben oder ungesichertes Ablegen im Gehäuse ist für einen dauerhaften 24/7-Server nicht vorgesehen.
+
+
+## Fortsetzung — Unterseite und Storage-/PCIe-Planung
+
+Die Unterseite des Tiny-PCs wurde ebenfalls geöffnet und fotografisch geprüft.
+
+- zwei SO-DIMM-Slots vorhanden
+- ein 16-GB-DDR4-2666-Modul installiert
+- zweiter SO-DIMM-Slot frei
+- 256-GB-Samsung-NVMe physisch bestätigt
+- RAM- und NVMe-Bereich mechanisch unauffällig
+
+### 9,5-mm-HDD mechanisch verworfen
+
+Die wiederverwendete 2,5-Zoll-HDD besitzt 9,5 mm Bauhöhe. Ohne den originalen Caddy würde sie zwar unter den Serien-Deckel passen, dabei jedoch auf Mainboard-/Bauteilbereichen aufliegen.
+
+Eine dünne Isolierfolie würde nur das elektrische Kurzschlussrisiko adressieren, nicht jedoch mechanischen Druck, Vibrationen, Wärme und Scheuern. Diese Einbauart wird daher nicht für einen 24/7-Host verwendet.
+
+### PCIe und Serien-Caddy
+
+Der serienmäßige 2,5-Zoll-Caddy belegt den Bauraum, der bei einer späteren PCIe-Riser-/Erweiterungskarte benötigt wird. Daher wird kein spezieller 9,5-mm-Caddy für den Serienplatz priorisiert.
+
+Kurzfristig wird ein **7-mm-2,5-Zoll-SATA-Laufwerk** als saubere Zwischenlösung im Original-Caddy gesucht.
+
+Langfristig soll der Tiny primär Compute-Node bleiben. Größerer Storage wird als separater bzw. erweiterter Rack-/Storage-Bereich geplant:
+
+```text
+Tiny Compute Node
+├── NVMe -> Proxmox + aktive VMs/Container
+├── 7-mm SATA -> optionale Übergangslösung
+└── PCIe -> spätere HBA/NIC-Erweiterung
+
+Storage-Bereich
+├── 3,5-Zoll-HDDs -> Bulk-Storage / Backups / Archiv
+└── 2,5-Zoll-Bays/Adapter -> SSDs und vorhandene Laufwerke
+```
+
+Für mehrere Laufwerke wird langfristig eine HBA-/SATA-/SAS-Anbindung oder ein separater Storage-Node gegenüber vielen einzelnen USB-SATA-Adaptern bevorzugt.
